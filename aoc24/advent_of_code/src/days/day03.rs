@@ -25,14 +25,14 @@ pub fn part2(input: &str) -> String {
     let mut mulsum = 0;
     let mut store: bool = true;
     for caps in re.captures_iter(input) {
-        if let (Some(kw1)) = (caps.get(3)) {
+        if let Some(kw1) = caps.get(3) {
             if kw1.as_str() == "do" {
                 store = true;
                 continue;
             }
         }
         
-        if let (Some(kw2)) = (caps.get(4)) {
+        if let Some(kw2) = caps.get(4) {
             if kw2.as_str() == "don't" {
                 store = false;
                 continue;
